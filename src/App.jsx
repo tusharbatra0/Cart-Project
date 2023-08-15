@@ -1,19 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Page from './Page'
+import React from 'react';
+import Cart from './Cart';
+import { items } from './item'; 
 
-
-
-function App(prop) {
+const Page = () => {
+  console.log(items);
+  const listedItems = items.map((item, index) => {
+    return <Cart key={index} image={item.image} title={item.title} />;
+  });
 
   return (
-    <div className="appContainer">
-    < Page />
-    
+    <div>
+      <div>{listedItems}</div>
+      <h1>Cart: 0</h1>
     </div>
   );
-}
+};
 
-export default App
+export default Page;
