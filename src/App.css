@@ -4,7 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
-
+.button{
+  background-color: #0e0e0e;
+  color: aliceblue;
+}
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -1,17 +1,23 @@
 import React from 'react';
 import Cart from './Cart';
+import { useState } from 'react';
 import { items } from './item'; 
 
 const Page = () => {
-  console.log(items);
+  const [cart,setCart] = useState([])
+  
   const listedItems = items.map((item, index) => {
-    return <Cart key={index} image={item.image} title={item.title} />;
+    return <Cart 
+    key={index}
+    item = {item}
+    setCart = {setCart}
+     />;
   });
 
   return (
-    <div>
-      <div >{listedItems}</div>
-      <h1>Cart: 0</h1>
+    <div >
+      <div className='main-container'>{listedItems}</div>
+      <h1>Cart: {cart.length}</h1>
     </div>
   );
 };
