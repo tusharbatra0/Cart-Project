@@ -4,6 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+.image{
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+}
 .button{
   background-color: #0e0e0e;
   color: aliceblue;

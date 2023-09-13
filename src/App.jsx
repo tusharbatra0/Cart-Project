@@ -1,19 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Outlet } from "react-router-dom";
 import './App.css'
-import Page from './Page'
-
-
-
-function App(prop) {
+import Header from './Header'
+function App() {
 
   return (
-    <div className="appContainer">
-    < Page />
-    
-    </div>
-  );
+    <>
+    <div className="flex flex-col items-center">
+   <Header/>
+   <Outlet/>
+   </div>
+    </>
+  )
 }
 
 export default App
