@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
+
 function Header() {
   return (
     <div className="flex gap-[100px] ">
@@ -15,7 +16,9 @@ function Header() {
         </Link>
       </div>
       <div>
-        <Cart />
+        <Link to="/cart">
+          <Cart />
+        </Link>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import Page from "./Page";
 import About from "./About";
 import Contact from "./Contact";
 import App from "./App.jsx";
+import CartView from "./CartView";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const appRouter = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <CartView />,
       },
       {
         path: "/product/:id",
