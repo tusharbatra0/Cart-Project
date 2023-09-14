@@ -1,0 +1,4 @@
+- Create cart component.- done
+- Create Context (Centralised Store).
+- Create a component which will provide a data to whole app=> CartContextProvider.
+- 

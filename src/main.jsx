@@ -1,13 +1,11 @@
-import React from 'react'
-import './index.css'
-import Fullproduct from './Fullproduct'
-import ReactDOM from 'react-dom/client'
-import Page from './Page'
-import About from './About'
-import Contact from './Contact'
-import { Outlet } from 'react-router-dom'
-import App from './App.jsx'
-import { createBrowserRouter , RouterProvider } from 'react-router-dom'
+import "./index.css";
+import Fullproduct from "./Fullproduct";
+import ReactDOM from "react-dom/client";
+import Page from "./Page";
+import About from "./About";
+import Contact from "./Contact";
+import App from "./App.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -27,13 +25,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        element: <Fullproduct/>
-      }
+        element: <Fullproduct />,
+      },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-<RouterProvider router={appRouter}/>
-   
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={appRouter} />
+);

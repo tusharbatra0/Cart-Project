@@ -1,16 +1,17 @@
 import { Outlet } from "react-router-dom";
-import './App.css'
-import Header from './Header'
-function App() {
+import "./App.css";
+import Header from "./Header";
+import CartContextProvider from "./Context/Cart";
 
+function App() {
   return (
-    <>
-    <div className="flex flex-col items-center">
-   <Header/>
-   <Outlet/>
-   </div>
-    </>
-  )
+    <CartContextProvider>
+      <div className="flex flex-col items-center">
+        <Header />
+        <Outlet />
+      </div>
+    </CartContextProvider>
+  );
 }
 
-export default App
+export default App;
