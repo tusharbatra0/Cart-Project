@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import Cart from "./Cart";
 function Header() {
   return (
-    <div className="flex gap-8">
+    <div className="flex justify-between w-full">
+
+    <div className="flex gap-[250px]">
       <Link to="/">
         <button className="bg-black text-white">Home</button >
       </Link>
@@ -12,6 +15,10 @@ function Header() {
         <button className="bg-black text-white">Contact</button>
       </Link>
     </div>
+    <Link to="/cart">
+  <Cart/>
+  </Link>
+  </div>
   );
 }
 

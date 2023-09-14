@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import Fullproduct from './Fullproduct'
 import ReactDOM from 'react-dom/client'
+import Cartview from './Cartview'
 import Page from './Page'
 import About from './About'
 import Contact from './Contact'
@@ -16,6 +17,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Page />,
+      },
+      {
+        path: "/cart",
+        element: <Cartview />,
       },
       {
         path: "/about",

@@ -1,20 +1,31 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { CartContext } from "./Context/Cart";
 import { product } from "./config";
 const Fullproduct=()=>{
     const { id } = useParams();
+    const { setCartItems } = useContext(CartContext);
     const[Productdata , setProductdata]=useState({})
 
+    // Call API
     useEffect(() => {
         const apiURL = product(id);
         fetchProductdata(apiURL)
       }, [])
 
+    //   Function fetch
     const fetchProductdata = async(URL)=>{
         const res = await fetch(URL);
         const data = await res.json();
         setProductdata(data)
       }
+
+// Add to Cart
+const addToCart = (product) => {
+    setCartItems((prev) => [...prev, product]);
+  };
+
 console.log(Productdata)
     return(<>
     <div className="flex  container mx-auto flex  md:flex-row flex-col  ">
@@ -25,7 +36,7 @@ console.log(Productdata)
 
        <div className="flex gap-10 ">
         <button className="w-[180px] bg-[#ff9f00]  text-white">View Product</button>
-        <button className="w-[180px] bg-[#fb641b] text-white">Add to Cart</button>
+        <button className="w-[180px] bg-[#fb641b] text-white" onClick={() => addToCart(Productdata)}>Add to Cart</button>
         </div>
         </div>
 

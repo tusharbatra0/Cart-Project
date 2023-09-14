@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState , useEffect } from 'react';
-import Cart from './Cart';
+import Product from './Product';
 import Loader from './Loader';
 
 import { productsURL } from './config';
@@ -28,7 +28,7 @@ const Page = () => {
     <Loader/>
     ) : (
     Products.map((item)=>{
-       return <Cart  
+       return <Product  
        key={item.id}
        image={item.image}
        title ={item.category}

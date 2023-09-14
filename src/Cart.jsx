@@ -1,25 +1,15 @@
-import { Link } from 'react-router-dom';
+import React, { useContext } from "react"; // Import React and useContext
+import { CartContext } from "./Context/Cart";
 
+const Cart = () => {
+  const cartContext = useContext(CartContext);
+  return (
+    <>
+      <button className="bg-black text-white">
+        Cart: {cartContext.cartItem.length} items
+      </button>
+    </>
+  );
+};
 
-const Cart = ({ image, title, rating , price , id ,count }) => {
-
-    return (
-      <div className="mt-4 flex flex-col gap-4 items-start justify-items-start  p-4 min-w-[300px] max-w-[300px] min-h-[450px] max-h-[450px] ">  
-      <img className="image" src={image} alt="" />
-      <h2>{title}</h2>
-
-      <div className='flex gap-2 items-center' >
-     <h2 className='bg-[#388e3c] text-white p-2'>{rating}⭐</h2> <h3>({count})</h3>
-     </div>
-      <h2>MRP:- ₹{price}/-</h2>
-
-    
-
-      <Link to={`/product/${id}`}>
-      <button className="bg-[#ff9f00] text-white">View Product</button>
-      </Link>
-      </div>
-      
-    );
-  };
-  export default Cart;
+export default Cart;
